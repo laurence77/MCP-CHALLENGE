@@ -78,7 +78,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1
 .logo-container{display:flex;align-items:center;gap:.6rem;text-decoration:none}
 .icon-logo{width:36px;height:36px;color:var(--text)}
 .header-logo{width:40px;height:40px;object-fit:contain}
-.site-name{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--text);display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem}
+.site-name{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--text);display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem}.nav-link:hover{color:var(--primary);transform:translateY(-2px)}
+.nav-highlight{background:var(--primary);color:white!important;padding:0.4rem 1rem!important;border-radius:100px;transition:all var(--transition)!important}
+.nav-highlight:hover{background:var(--primary-dark);transform:scale(1.05);box-shadow:var(--shadow-glow)}
+.header-actions{display:flex;align-items:center;gap:1.5rem}
 .site-name span.text-accent { font-weight: 800; letter-spacing: -0.5px; }
 .main-nav ul,.nav-list{display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0}
 .main-nav li{list-style:none;margin:0;padding:0}
