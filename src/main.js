@@ -464,11 +464,51 @@ if (modalClose) {
     });
 }
 
-// Close on outside click
-window.addEventListener('click', (e) => {
-    if (e.target === honorModal) {
-        honorModal.classList.remove('active');
-    }
-});
+// === ULTRA-HIGH-FIDELITY EFFECTS ===
 
-console.log('Empower Impact v2.0 — Fully Upgraded');
+// 1. 3D Parallax Hero
+const heroVideo = document.getElementById('hero-video');
+const heroContent = document.getElementById('hero-content');
+const heroSection = document.getElementById('hero');
+
+if (heroSection) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if (scrolled < window.innerHeight) {
+            if (heroVideo) heroVideo.style.transform = `translate3d(0, ${scrolled * 0.4}px, 0)`;
+            if (heroContent) heroContent.style.transform = `translate3d(0, ${scrolled * 0.2}px, 0)`;
+            if (heroContent) heroContent.style.opacity = 1 - (scrolled / 700);
+        }
+    });
+}
+
+// 2. Interactive Glass Particles
+const particleContainer = document.getElementById('hero-particles');
+if (particleContainer) {
+    // Generate particles
+    for (let i = 0; i < 15; i++) {
+        const p = document.createElement('div');
+        p.className = 'glass-particle';
+        const size = Math.random() * 60 + 20;
+        p.style.width = `${size}px`;
+        p.style.height = `${size}px`;
+        p.style.left = `${Math.random() * 100}%`;
+        p.style.top = `${Math.random() * 100}%`;
+        p.style.opacity = Math.random() * 0.3;
+        particleContainer.appendChild(p);
+    }
+
+    // React to mouse
+    window.addEventListener('mousemove', (e) => {
+        const particles = document.querySelectorAll('.glass-particle');
+        const x = (e.clientX / window.innerWidth - 0.5) * 50;
+        const y = (e.clientY / window.innerHeight - 0.5) * 50;
+        
+        particles.forEach((p, i) => {
+            const factor = (i + 1) * 0.2;
+            p.style.transform = `translate3d(${x * factor}px, ${y * factor}px, 0) rotate(${x}deg)`;
+        });
+    });
+}
+
+console.log('Empower Impact v2.1 — Ultra-HD Edition');

@@ -107,4 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle window focus/visibility
     document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
     document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+
+    // --- MAGNETIC BUTTONS LOGIC ---
+    const updateMagnetic = () => {
+        const magneticElements = document.querySelectorAll('.btn, .theme-btn, .nav-link, .honor-card, .btn-secondary');
+        magneticElements.forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                el.style.transition = 'transform 0.1s ease-out';
+                el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                el.style.transform = `translate(0, 0)`;
+            });
+        });
+    };
+    updateMagnetic();
+    setInterval(updateMagnetic, 3000);
 });
