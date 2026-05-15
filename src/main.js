@@ -179,4 +179,19 @@ if (heroSection) {
     });
 }
 
+// === PRELOADER LOGIC ===
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Minimum display time for the logo animation to feel premium
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+            // Trigger entry animations for hero content
+            document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => {
+                el.style.animationPlayState = 'running';
+            });
+        }, 1500);
+    }
+});
+
 console.log('Empower Impact v2.0 — Fully Upgraded');
