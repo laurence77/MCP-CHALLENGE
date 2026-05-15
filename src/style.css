@@ -647,10 +647,12 @@ body.menu-open {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
 }
 .search-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: all;
 }
 .search-close {
     position: absolute;
@@ -958,8 +960,13 @@ body.menu-open {
     align-items: center; justify-content: center;
     opacity: 0;
     transition: opacity 0.5s ease;
+    pointer-events: none;
 }
-.honor-modal.active { display: flex; opacity: 1; }
+.honor-modal.active { 
+    display: flex; 
+    opacity: 1; 
+    pointer-events: all;
+}
 .modal-inner {
     background: var(--bg-surface);
     width: 90%;

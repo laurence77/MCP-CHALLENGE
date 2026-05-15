@@ -1,0 +1,15 @@
+{
+  "name": "empower-impact-platform",
+  "version": "2.1.0",
+  "description": "Enterprise-grade B2B charity platform modernization",
+  "main": "index.html",
+  "scripts": {
+    "dev": "browser-sync start --server --files '*.html, src/*.css, src/*.js'",
+    "build": "mkdir -p dist && cp -r media src index.html newsletter.html partnerships.html dist/",
+    "lint": "eslint src/*.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "eslint": "^9.0.0"
+  }
+}

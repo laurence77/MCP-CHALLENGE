@@ -36,11 +36,11 @@ window.addEventListener('scroll', () => {
 
 // === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+        anchor.addEventListener('click', e => {
+            e.preventDefault();
+            const target = anchor.getAttribute('href');
+            if (target && lenis) lenis.scrollTo(target);
+        });
 });
 
 // === DARK MODE TOGGLE ===
@@ -312,12 +312,16 @@ const searchContent = [
 function openSearch() {
     if (!searchOverlay || !searchInput) return;
     searchOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (typeof lenis !== 'undefined') lenis.stop();
     setTimeout(() => searchInput.focus(), 100);
 }
 
 function closeSearch() {
     if (!searchOverlay || !searchInput) return;
     searchOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    if (typeof lenis !== 'undefined') lenis.start();
     searchInput.value = '';
     renderResults([]);
 }
