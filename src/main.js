@@ -287,4 +287,99 @@ window.addEventListener('load', () => {
     }, 25000);
 });
 
+// === GLOBAL SEARCH LOGIC ===
+const searchOverlay = document.getElementById('search-overlay');
+const searchTrigger = document.getElementById('search-trigger');
+const searchClose = document.querySelector('.search-close');
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+const searchContent = [
+    { title: "Cancer Support", type: "Initiative", link: "#initiatives" },
+    { title: "Empower Impact Newsletter", type: "Communication", link: "newsletter.html" },
+    { title: "Corporate Partnerships", type: "B2B", link: "partnerships.html" },
+    { title: "Impact Milestone Progress", type: "Transparency", link: "#impact" },
+    { title: "Volunteer Locally", type: "Community", link: "#community" },
+    { title: "Join the Challenge", type: "Action", link: "index.html" }
+];
+
+function openSearch() {
+    searchOverlay.classList.add('active');
+    setTimeout(() => searchInput.focus(), 100);
+}
+
+function closeSearch() {
+    searchOverlay.classList.remove('active');
+    searchInput.value = '';
+    renderResults([]);
+}
+
+function renderResults(results) {
+    if (results.length === 0 && searchInput.value !== '') {
+        searchResults.innerHTML = `<div class="search-suggestions"><h3>No results found</h3></div>`;
+        return;
+    }
+    
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-suggestions">
+                <h3>Popular Searches</h3>
+                <div class="suggestion-tags">
+                    <button class="tag">Cancer Support</button>
+                    <button class="tag">Impact Map</button>
+                    <button class="tag">Newsletter</button>
+                    <button class="tag">Initiatives</button>
+                </div>
+            </div>`;
+        return;
+    }
+
+    searchResults.innerHTML = results.map((res, i) => `
+        <div class="search-result-item" style="animation-delay: ${i * 0.1}s" onclick="window.location.href='${res.link}'">
+            <div class="proof-avatar">${res.title.charAt(0)}</div>
+            <div class="proof-content">
+                <span class="proof-user">${res.title}</span>
+                <span class="proof-action">${res.type}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+if (searchTrigger) searchTrigger.addEventListener('click', openSearch);
+if (searchClose) searchClose.addEventListener('click', closeSearch);
+
+// Keyboard listeners
+window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && !searchOverlay.classList.contains('active')) {
+        e.preventDefault();
+        openSearch();
+    }
+    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+        closeSearch();
+    }
+});
+
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase();
+        if (val.length < 2) {
+            renderResults([]);
+            return;
+        }
+        const filtered = searchContent.filter(item => 
+            item.title.toLowerCase().includes(val) || 
+            item.type.toLowerCase().includes(val)
+        );
+        renderResults(filtered);
+    });
+}
+
+// Suggested tags delegation
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('tag')) {
+        searchInput.value = e.target.innerText;
+        searchInput.dispatchEvent(new Event('input'));
+    }
+});
+
 console.log('Empower Impact v2.0 — Fully Upgraded');
