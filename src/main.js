@@ -105,15 +105,42 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 counters.forEach(c => counterObserver.observe(c));
 
+// === MOBILE MENU ===
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+        const isActive = mobileToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        mobileToggle.setAttribute('aria-expanded', isActive);
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
 // === VANILLA TILT ===
 if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll(".glass-card, .nl-card"), {
-        max: 8,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2,
-        scale: 1.02
-    });
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (!isTouch) {
+        VanillaTilt.init(document.querySelectorAll(".glass-card, .nl-card, .supporter-item"), {
+            max: 8,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            scale: 1.02
+        });
+    }
 }
 
 // === MILESTONE BAR LOGIC ===

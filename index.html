@@ -39,6 +39,11 @@
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
+                <button class="mobile-nav-toggle" aria-label="Open mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
                 <a href="#donations" class="btn btn-primary btn-sm">Get Involved</a>
             </div>
         </div>
@@ -47,7 +52,7 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section relative overflow-hidden" id="hero">
-            <video autoplay muted loop playsinline class="hero-video"><source src="media/videos/impact-hero-video.mp4" type="video/mp4"></video>
+            <video autoplay muted loop playsinline poster="media/images/supporters/supporter-10.JPG" class="hero-video"><source src="media/videos/impact-hero-video.mp4" type="video/mp4"></video>
             <div class="video-overlay"></div>
             <div class="hero-particles" aria-hidden="true"></div>
             <img src="media/images/initiatives/impact-asset-01.png" alt="" class="hero-watermark" aria-hidden="true">
@@ -290,6 +295,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu glass">
+        <div class="mobile-menu-inner">
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#initiatives" class="mobile-nav-link">Initiatives</a></li>
+                    <li><a href="#impact" class="mobile-nav-link">Our Impact</a></li>
+                    <li><a href="#donations" class="mobile-nav-link">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- Sticky Milestone Bar -->
     <div id="milestone-bar" class="milestone-bar glass hide">
