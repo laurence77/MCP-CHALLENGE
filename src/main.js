@@ -179,20 +179,27 @@ if (heroSection) {
     });
 }
 
+// === CORE CONSTANTS ===
+const names = ["James", "Sarah", "Elena", "Liam", "Peaker 77", "Marcus", "Sophie", "Sam", "MPC Team", "The Heughans"];
+
 // === PRELOADER LOGIC ===
-window.addEventListener('load', () => {
+function clearPreloader() {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        // Minimum display time for the logo animation to feel premium
+    if (preloader && !preloader.classList.contains('loaded')) {
         setTimeout(() => {
             preloader.classList.add('loaded');
             // Trigger entry animations for hero content
             document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => {
                 el.style.animationPlayState = 'running';
             });
-        }, 1500);
+        }, 1000);
     }
-});
+}
+
+// Event Listeners for Preloader
+window.addEventListener('load', clearPreloader);
+// Fallback: Force clear if it takes too long
+setTimeout(clearPreloader, 4000); 
 
 // === FUNDRAISING SIMULATOR ===
 const donationProgress = document.querySelector('.milestone-progress-fill');
@@ -202,7 +209,6 @@ const liveNotify = document.getElementById('live-donation');
 
 let currentRaised = 150000;
 const goal = 1000000;
-const names = ["James", "Sarah", "Elena", "Liam", "Peaker 77", "Marcus", "Sophie", "Sam", "MPC Team", "The Heughans"];
 
 function simulateDonation() {
     const amount = Math.floor(Math.random() * 500) + 10; // $10 to $510
