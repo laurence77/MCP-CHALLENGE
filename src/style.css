@@ -351,13 +351,15 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1
 }
 /* === CUSTOM CURSOR === */
 @media (hover: hover) and (pointer: fine) {
-    body { cursor: none; }
-    a, button { cursor: none; }
+    /* Traditional Cursor Restored */
+    body, a, button { cursor: auto; }
+    a, button { cursor: pointer; }
 
     .custom-cursor {
         width: 20px;
         height: 20px;
         background-color: var(--primary);
+        opacity: 0.4;
         border-radius: 50%;
         position: fixed;
         top: -10px;
