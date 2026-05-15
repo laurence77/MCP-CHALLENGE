@@ -397,13 +397,13 @@ document.addEventListener('click', (e) => {
 });
 
 // === IMPACT MAP LOGIC ===
-const impactCard = document.getElementById('impact-card');
-const impactCity = document.getElementById('impact-city');
-const impactDesc = document.getElementById('impact-desc');
-const impactMetric = document.getElementById('impact-metric');
+const mapImpactCard = document.getElementById('map-impact-card');
+const mapImpactCity = document.getElementById('map-impact-city');
+const mapImpactDesc = document.getElementById('map-impact-desc');
+const mapImpactMetric = document.getElementById('map-impact-metric');
 const pulsePoints = document.querySelectorAll('.pulse-point');
 
-const impactData = {
+const mapImpactData = {
     "London": { desc: "Supporting Blood Cancer UK research and patient care programs.", metric: "£250,000 Donated" },
     "Nairobi": { desc: "Clean water initiatives supporting over 5,000 families in rural areas.", metric: "5,000+ Families" },
     "Toronto": { desc: "New recovery centers for children undergoing cancer treatment.", metric: "12 New Centers" },
@@ -415,13 +415,13 @@ if (pulsePoints.length > 0) {
         point.addEventListener('click', (e) => {
             e.stopPropagation();
             const city = point.getAttribute('data-city');
-            const data = impactData[city];
+            const data = mapImpactData[city];
             
-            if (data && impactCard && impactCity && impactDesc && impactMetric) {
-                impactCity.innerText = city;
-                impactDesc.innerText = data.desc;
-                impactMetric.innerText = data.metric;
-                impactCard.classList.add('active');
+            if (data && mapImpactCard && mapImpactCity && mapImpactDesc && mapImpactMetric) {
+                mapImpactCity.innerText = city;
+                mapImpactDesc.innerText = data.desc;
+                mapImpactMetric.innerText = data.metric;
+                mapImpactCard.classList.add('active');
             }
         });
     });
@@ -429,7 +429,7 @@ if (pulsePoints.length > 0) {
 
 // Close card when clicking anywhere else
 document.addEventListener('click', () => {
-    if (impactCard) impactCard.classList.remove('active');
+    if (mapImpactCard) mapImpactCard.classList.remove('active');
 });
 
 console.log('Empower Impact v2.0 — Fully Upgraded');
