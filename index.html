@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PEAK CHALLENGE | Empower Impact</title>
+    <meta name="description" content="Join Empower Impact in the fight against cancer. Every donation brings hope, support, and care to individuals and families affected by cancer.">
+    <link rel="icon" type="image/png" href="media/branding/favicon.png">
+    <link rel="apple-touch-icon" href="media/branding/favicon.png">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preload" href="media/videos/impact-hero-video.mp4" as="video" type="video/mp4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"NGO","name":"Empower Impact","description":"A global charity movement uniting against cancer through treatment support, awareness programs, and research initiatives.","email":"info.managementaffairs@gmail.com","url":"https://empowerimpact.org"}
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header glass sticky" role="banner">
+        <div class="container flex-between">
+            <a href="#" class="logo-container" aria-label="Empower Impact Home">
+                <img src="media/branding/logo.png" alt="MPC Logo" class="header-logo">
+                <span class="site-name">My PEAK CHALLENGE <span class="text-accent">Empower Impact</span></span>
+            </a>
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#mission" class="nav-link">Mission</a></li>
+                    <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
+                    <li><a href="#impact" class="nav-link">Impact</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="newsletter.html" class="nav-link">Newsletter</a></li>
+                    <li><a href="#donations" class="nav-link">Donate</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <a href="#donations" class="btn btn-primary btn-sm">Get Involved</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section relative overflow-hidden" id="hero">
+            <video autoplay muted loop playsinline class="hero-video"><source src="media/videos/impact-hero-video.mp4" type="video/mp4"></video>
+            <div class="video-overlay"></div>
+            <div class="hero-particles" aria-hidden="true"></div>
+            <img src="media/images/initiatives/impact-asset-01.png" alt="" class="hero-watermark" aria-hidden="true">
+            <div class="container text-center relative z-10">
+                <span class="badge fade-in">
+                    <svg viewBox="0 0 24 24" fill="none" class="badge-icon"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.7 0l-1.1 1-1.1-1a5.5 5.5 0 0 0-7.7 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z" stroke="currentColor" stroke-width="1.5"/><path d="M12 9v4" stroke="var(--primary)" stroke-width="1.5"/></svg>
+                    Supporting the Fight Against Cancer
+                </span>
+                <h1 class="hero-title fade-in-up">Bringing <span class="text-gradient">Hope, Support,</span> and <span class="italic">Care</span> to every life.</h1>
+                <p class="hero-subtitle fade-in-up delay-1">Every donation, no matter the size, helps bring support to individuals and families affected by cancer.</p>
+                <div class="hero-cta flex justify-center gap-m fade-in-up delay-2">
+                    <a href="#donations" class="btn btn-large btn-primary btn-glow">Make an Impact</a>
+                    <a href="#initiatives" class="btn btn-large btn-ghost">Explore Initiatives</a>
+                </div>
+                <div class="scroll-indicator fade-in-up delay-3">
+                    <span>Scroll to explore</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Statement -->
+        <section id="mission" class="mission-section section-padding bg-surface relative overflow-hidden">
+            <div class="blob-bg"></div>
+            <div class="container grid-2 relative z-10">
+                <div class="mission-content reveal">
+                    <span class="section-label">Our Mission</span>
+                    <h2 class="section-title">Your Generosity <br/><span class="text-accent">Saves Lives.</span></h2>
+                    <p class="text-large margin-bottom-l">Your kindness helps fund treatment support, awareness programs, research initiatives, and compassionate care for those fighting this battle every day.</p>
+                    <div class="stats-row">
+                        <div class="stat-card glass-card-sm">
+                            <span class="stat-value counter" data-target="8">0</span><span class="stat-unit">M+</span>
+                            <span class="stat-label">Raised</span>
+                        </div>
+                        <div class="stat-card glass-card-sm">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Transparency</span>
+                        </div>
+                        <div class="stat-card glass-card-sm">
+                            <span class="stat-value">Global</span>
+                            <span class="stat-label">Outreach</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mission-visual reveal delay-1">
+                    <div class="image-wrapper rounded-xl shadow-xl overflow-hidden">
+                        <img src="media/images/supporters/supporter-06.JPG" alt="Our global community making an impact" class="mission-img" loading="lazy">
+                    </div>
+                    <div class="floating-card glass-card-sm">
+                        <svg viewBox="0 0 24 24" fill="none" class="floating-icon"><path d="M12 21c5-5 5-13 5-13s-8 0-13 5c0 0 0 8 8 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 12l10 5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span>580k+ Trees Planted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Initiatives Grid -->
+        <section id="initiatives" class="initiatives-section section-padding">
+            <div class="container">
+                <div class="section-header text-center margin-bottom-xl">
+                    <span class="section-label">What We Do</span>
+                    <h2 class="section-title">Core Initiatives</h2>
+                    <p class="section-subtitle max-width-m mx-auto">Dedicated to comprehensive cancer support, environmental action, and humanitarian relief.</p>
+                </div>
+                <div class="initiatives-grid">
+                    <div class="initiative-card glass-card reveal">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.7 0l-1.1 1-1.1-1a5.5 5.5 0 0 0-7.7 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z" stroke="currentColor" stroke-width="1.5"/><path d="M12 9v4" stroke="var(--primary)" stroke-width="1.5"/></svg></div>
+                        <h3>Treatment Support</h3>
+                        <p>Direct financial and medical assistance to those in active treatment, funding clinical trials and care.</p>
+                    </div>
+                    <div class="initiative-card glass-card reveal delay-1">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8l1.5 4L12 16l-1.5-4L12 8z" fill="var(--primary)" stroke="var(--primary)" stroke-width="1"/><circle cx="12" cy="12" r="1" fill="white"/></svg></div>
+                        <h3>Awareness Programs</h3>
+                        <p>Educating communities on early detection, preventative health, and the importance of regular screenings.</p>
+                    </div>
+                    <div class="initiative-card glass-card reveal delay-2">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15l-3 7 3-2 3 2-3-7z" fill="var(--primary)" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9" r="7" stroke="currentColor" stroke-width="1.5" fill="var(--card-bg)"/><path d="M9 9l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                        <h3>Research Initiatives</h3>
+                        <p>Funding next-generation research to discover better treatments and cures for blood cancers.</p>
+                    </div>
+                    <div class="initiative-card glass-card reveal delay-1">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c5-5 5-13 5-13s-8 0-13 5c0 0 0 8 8 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 12l10 5" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                        <h3>Environmental Action</h3>
+                        <p>Over 580,000 trees planted and $500k raised for climate action through our environmental partnerships.</p>
+                    </div>
+                    <div class="initiative-card glass-card reveal delay-2">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M4 18a4 4 0 0 1 8 0M12 18a4 4 0 0 1 8 0" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                        <h3>Humanitarian Relief</h3>
+                        <p>Over 11 million meals funded worldwide through partnerships with Feeding America and Global FoodBanking.</p>
+                    </div>
+                    <div class="initiative-card glass-card reveal delay-3">
+                        <div class="card-icon-wrap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v18M3 12h18" stroke="var(--primary)" stroke-width="1" stroke-opacity="0.4"/></svg></div>
+                        <h3>Global Outreach</h3>
+                        <p>Ambassador groups worldwide driving local impact — from Northeast Peakers to Colorado Rocky Mountain Peakers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Timeline -->
+        <section id="impact" class="impact-section section-padding bg-surface">
+            <div class="container">
+                <div class="section-header text-center margin-bottom-xl">
+                    <span class="section-label">Our Journey</span>
+                    <h2 class="section-title">A Decade of <span class="text-accent">Impact</span></h2>
+                    <p class="section-subtitle max-width-m mx-auto">From a single idea in 2015 to a global movement raising nearly $8 million for life-changing causes.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2015</span><p>MPC founded. First partner: <strong>Blood Cancer UK</strong>.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2016</span><p><strong>£225,000</strong> raised for a clinical trial on acute myeloid leukemia.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2020</span><p>Over <strong>$500,000</strong> raised for the Environmental Defense Fund.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2021</span><p>Funded over <strong>11 million meals</strong> with Feeding America.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2022</span><p><strong>580,000+ trees</strong> planted with One Tree Planted.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2025</span><p>10th anniversary. London Marathon for Blood Cancer UK. <strong>£40,000+</strong> raised.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content glass-card-sm"><span class="timeline-year">2026</span><p>Official partner of the <strong>Commonwealth Sport Foundation</strong> for Glasgow 2026.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section section-padding relative overflow-hidden">
+            <div class="team-bg-image"></div>
+            <div class="team-overlay"></div>
+            <div class="container relative z-10">
+                <div class="section-header text-center margin-bottom-xl">
+                    <span class="section-label">The Engine of a Movement</span>
+                    <h2 class="section-title">Meet the <span class="text-accent">Team</span></h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card glass-card reveal">
+                        <div class="team-avatar"><img src="media/images/supporters/supporter-03.JPG" alt="Sam Heughan" class="team-img"></div>
+                        <h3>The Founder</h3>
+                        <p><strong>Sam Heughan</strong> — Visionary leader who actively participates in every challenge, marathon, and Munro step challenge.</p>
+                    </div>
+                    <div class="team-card glass-card reveal delay-1">
+                        <div class="team-avatar"><img src="media/images/supporters/supporter-10.JPG" alt="Charity Coordinators" class="team-img"></div>
+                        <h3>Charity Coordinators</h3>
+                        <p>Dedicated team managing our global partnerships and ensuring every donation reaches those in need.</p>
+                    </div>
+                    <div class="team-card glass-card reveal delay-2">
+                        <div class="team-avatar"><img src="media/images/supporters/supporter-13.jpg" alt="Coaching Team" class="team-img"></div>
+                        <h3>Coaching Team</h3>
+                        <p>Our coaches provide structured fitness, nutrition, and wellness programs to help you reach your peak.</p>
+                    </div>
+                    <div class="team-card glass-card reveal delay-3">
+                        <div class="team-avatar"><img src="media/images/supporters/supporter-01.JPG" alt="Global Peakers" class="team-img"></div>
+                        <h3>Global Peakers</h3>
+                        <p>Thousands of active members worldwide, setting personal goals while fundraising with heart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supporter Wall -->
+        <section id="supporters" class="supporters-section section-padding bg-surface">
+            <div class="container">
+                <div class="section-header text-center margin-bottom-l">
+                    <span class="section-label">Community</span>
+                    <h2 class="section-title">A Global Community of <span class="text-accent">Care</span></h2>
+                </div>
+                <div class="supporter-grid">
+                    <div class="supporter-item supporter-large reveal"><img src="media/images/supporters/supporter-13.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-1"><img src="media/images/supporters/supporter-12.jpeg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item supporter-wide reveal delay-2"><img src="media/images/supporters/supporter-14.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-3"><img src="media/images/supporters/supporter-15.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-4"><img src="media/images/supporters/supporter-16.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-1"><img src="media/images/supporters/supporter-11.jpeg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-2"><img src="media/images/supporters/supporter-09.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-3"><img src="media/images/supporters/supporter-08.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item reveal delay-4"><img src="media/images/supporters/supporter-07.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
+                    <div class="supporter-item glass-card-sm flex-center supporter-more reveal delay-5"><span>+1k<br>Supporters</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Calculator -->
+        <section id="calculator" class="calculator-section section-padding">
+            <div class="container">
+                <div class="calc-wrapper glass-card max-width-m mx-auto text-center reveal">
+                    <div class="calc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 11V5a2 2 0 0 0-4 0v6M10 11V6a2 2 0 0 0-4 0v11a5 5 0 0 0 10 0v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 15v2" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg></div>
+                    <h2 class="section-title">See Your <span class="text-accent">Impact</span></h2>
+                    <p class="margin-bottom-l">Adjust the slider to see how your donation helps.</p>
+                    <div class="calculator-ui">
+                        <input type="range" id="donation-range" min="10" max="1000" step="10" value="100" class="impact-slider" aria-label="Donation amount">
+                        <div class="impact-display margin-top-l">
+                            <span class="donation-amount">$<span id="amount-val">100</span></span>
+                            <p id="impact-desc" class="impact-text">Provides 2 days of treatment support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Section -->
+        <section id="donations" class="donation-section section-padding bg-dark relative overflow-hidden">
+            <div class="blob-bg-dark"></div>
+            <div class="container text-center relative z-10">
+                <span class="section-label text-accent">Support the Mission</span>
+                <h2 class="section-title text-white">Ready to Make a <span class="text-gradient">Difference?</span></h2>
+                <p class="text-large margin-bottom-xl text-muted max-width-m mx-auto">For payment inquiries, donations, sponsorships, or partnership opportunities, please contact us directly.</p>
+                <div class="email-hero-card glass-dark max-width-m mx-auto reveal">
+                    <img src="media/images/initiatives/impact-asset-01.png" alt="MPC" class="donation-watermark">
+                    <div class="email-icon-row">
+                        <svg viewBox="0 0 24 24" fill="none" class="email-icon"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 11V5a2 2 0 0 0-4 0v6M10 11V6a2 2 0 0 0-4 0v11a5 5 0 0 0 10 0v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 15v2" stroke="var(--primary-light)" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <span class="email-label">Official Partnership Channel</span>
+                    <a href="mailto:info.managementaffairs@gmail.com" class="email-cta">info.managementaffairs@gmail.com</a>
+                    <a href="mailto:info.managementaffairs@gmail.com?subject=Partnership%20Inquiry" class="btn btn-primary btn-large btn-glow">Send an Inquiry</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="main-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container grid-footer">
+                <div class="footer-brand">
+                    <a href="#" class="logo-container"><img src="media/branding/logo.png" alt="MPC Logo" class="header-logo"><span class="site-name">My PEAK CHALLENGE <span class="text-accent">Empower Impact</span></span></a>
+                    <img src="media/images/initiatives/impact-asset-01.png" alt="MPC" class="footer-wordmark">
+                    <p class="footer-desc">Thank you for standing with us and being part of the fight against cancer.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#mission">Our Mission</a>
+                    <a href="#initiatives">Initiatives</a>
+                    <a href="#impact">Impact Timeline</a>
+                    <a href="#team">Our Team</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:info.managementaffairs@gmail.com">info.managementaffairs@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container flex-between">
+                <p>© 2026 Empower Impact. All rights reserved.</p>
+                <p>Built with ❤️ for the fight against cancer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Milestone Bar -->
+    <div id="milestone-bar" class="milestone-bar glass hide">
+        <div class="container flex-between">
+            <div class="milestone-info">
+                <span class="milestone-label">Campaign Progress</span>
+                <div class="milestone-text">£1,000,000 <span class="text-accent">Goal</span></div>
+            </div>
+            <div class="milestone-progress-container">
+                <div class="milestone-progress-fill" style="width: 15%"></div>
+            </div>
+            <div class="milestone-stats">
+                <span class="milestone-pct">15% Raised</span>
+                <a href="#donations" class="btn btn-primary btn-small">Donate</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="src/cursor.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>

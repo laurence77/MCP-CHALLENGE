@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.vscode/
+.gemini/
+rebuild/
+vendor/
+public/
+assets/
+video/
+*.log
