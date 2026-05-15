@@ -15,6 +15,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// === GLOBAL ELEMENTS ===
+const heroSection = document.getElementById('hero');
+
 // === SCROLL REVEAL ===
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -167,7 +170,6 @@ document.querySelectorAll('.glass-card, .nl-card, .stat-card').forEach(card => {
 });
 
 // === MOBILE HERO EXPANSION ===
-const heroSection = document.getElementById('hero');
 if (heroSection) {
     heroSection.addEventListener('click', (e) => {
         // Don't toggle if clicking a button
@@ -473,7 +475,7 @@ if (modalClose) {
 // 1. 3D Parallax Hero
 const heroVideo = document.getElementById('hero-video');
 const heroContent = document.getElementById('hero-content');
-const heroSection = document.getElementById('hero');
+// heroSection is already declared globally
 
 if (heroSection) {
     window.addEventListener('scroll', () => {
