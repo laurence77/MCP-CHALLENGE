@@ -123,6 +123,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1
 .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,.25)}
 .btn-ghost{border:2px solid rgba(255,255,255,.3);color:#fff;backdrop-filter:blur(4px)}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-secondary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(0,168,150,.2)}
+.btn-secondary:hover{background:var(--accent);filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,168,150,.25)}
 .btn-large{padding:1rem 2.5rem;font-size:1rem;border-radius:var(--radius-l)}
 .btn-glow{animation:btnGlow 3s ease-in-out infinite}
 @keyframes btnGlow{0%,100%{box-shadow:0 4px 14px rgba(37,99,235,.3)}50%{box-shadow:0 4px 30px rgba(37,99,235,.5)}}
