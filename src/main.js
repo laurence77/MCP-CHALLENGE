@@ -166,4 +166,17 @@ document.querySelectorAll('.glass-card, .nl-card, .stat-card').forEach(card => {
     });
 });
 
+// === MOBILE HERO EXPANSION ===
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+    heroSection.addEventListener('click', (e) => {
+        // Don't toggle if clicking a button
+        if (e.target.closest('.btn')) return;
+        
+        if (window.innerWidth <= 768) {
+            heroSection.classList.toggle('hero-expanded');
+        }
+    });
+}
+
 console.log('Empower Impact v2.0 — Fully Upgraded');
