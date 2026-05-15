@@ -68,6 +68,18 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="lang-selector">
+                    <button class="lang-btn" aria-label="Select language">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span>EN</span>
+                    </button>
+                    <div class="lang-dropdown glass">
+                        <a href="#" class="lang-option active">English (UK)</a>
+                        <a href="#" class="lang-option">Français</a>
+                        <a href="#" class="lang-option">Deutsch</a>
+                        <a href="#" class="lang-option">Español</a>
+                    </div>
+                </div>
                 <button id="search-trigger" class="theme-btn" aria-label="Search platform">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </button>
@@ -292,24 +304,86 @@
             </div>
         </section>
 
-        <!-- Supporter Wall -->
-        <section id="supporters" class="supporters-section section-padding bg-surface">
+        <!-- Peaker Wall of Honor -->
+        <section id="supporters" class="supporters-section section-padding bg-surface overflow-hidden">
             <div class="container">
                 <div class="section-header text-center margin-bottom-l">
-                    <span class="section-label">Community</span>
-                    <h2 class="section-title">A Global Community of <span class="text-accent">Care</span></h2>
+                    <span class="badge fade-in">Community Heroes</span>
+                    <h2 class="section-title">The Peaker <span class="text-accent">Wall of Honor</span></h2>
+                    <p class="section-subtitle">Celebrating the thousands of individuals driving global change through personal sacrifice and dedication.</p>
                 </div>
-                <div class="supporter-grid">
-                    <div class="supporter-item supporter-large reveal"><img src="media/images/supporters/supporter-13.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-1"><img src="media/images/supporters/supporter-12.jpeg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item supporter-wide reveal delay-2"><img src="media/images/supporters/supporter-14.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-3"><img src="media/images/supporters/supporter-15.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-4"><img src="media/images/supporters/supporter-16.jpg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-1"><img src="media/images/supporters/supporter-11.jpeg" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-2"><img src="media/images/supporters/supporter-09.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-3"><img src="media/images/supporters/supporter-08.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item reveal delay-4"><img src="media/images/supporters/supporter-07.JPG" alt="Supporter community photo" class="supporter-img" loading="lazy"></div>
-                    <div class="supporter-item glass-card-sm flex-center supporter-more reveal delay-5"><span>+1k<br>Supporters</span></div>
+            </div>
+
+            <div class="marquee-wrapper">
+                <!-- Row 1: Left to Right -->
+                <div class="marquee marquee-ltr">
+                    <div class="marquee-content">
+                        <!-- Card 1 -->
+                        <div class="honor-card glass reveal" data-peaker="Sam L." data-goal="Marathon" data-raised="£1,250">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-01.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Sam L.</h4><span>London, UK</span></div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="honor-card glass reveal" data-peaker="Elena R." data-goal="100km Cycle" data-raised="£3,400">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-02.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Elena R.</h4><span>Milan, IT</span></div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="honor-card glass reveal" data-peaker="Marcus J." data-goal="Peak Climb" data-raised="£850">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-03.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Marcus J.</h4><span>Berlin, DE</span></div>
+                        </div>
+                        <!-- Duplicates for seamless loop -->
+                        <div class="honor-card glass">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-01.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Sam L.</h4><span>London, UK</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Right to Left -->
+                <div class="marquee marquee-rtl">
+                    <div class="marquee-content">
+                        <div class="honor-card glass" data-peaker="Sophie K." data-goal="Daily 5k" data-raised="£1,100">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-04.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Sophie K.</h4><span>Sydney, AU</span></div>
+                        </div>
+                        <div class="honor-card glass" data-peaker="Liam W." data-goal="Swimming" data-raised="£2,100">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-05.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Liam W.</h4><span>New York, US</span></div>
+                        </div>
+                        <div class="honor-card glass" data-peaker="Sarah M." data-goal="Ultra Marathon" data-raised="£5,600">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-06.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Sarah M.</h4><span>Edinburgh, UK</span></div>
+                        </div>
+                        <!-- Duplicates -->
+                        <div class="honor-card glass">
+                            <div class="honor-avatar"><img src="media/images/supporters/supporter-04.JPG" alt="Peaker"></div>
+                            <div class="honor-info"><h4>Sophie K.</h4><span>Sydney, AU</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Honor Modal (Dynamic) -->
+            <div id="honor-modal" class="honor-modal glass">
+                <div class="modal-inner">
+                    <button class="modal-close">×</button>
+                    <div class="modal-header">
+                        <div id="modal-avatar" class="modal-avatar"></div>
+                        <h3 id="modal-name">Peaker Name</h3>
+                        <span id="modal-location">Location</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-stat">
+                            <label>The Challenge</label>
+                            <p id="modal-goal">Marathon Finish</p>
+                        </div>
+                        <div class="modal-stat">
+                            <label>Impact Raised</label>
+                            <p id="modal-raised" class="text-accent">£0,000</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -327,6 +401,81 @@
                             <span class="donation-amount">$<span id="amount-val">100</span></span>
                             <p id="impact-desc" class="impact-text">Provides 2 days of treatment support.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Timeline -->
+        <section id="timeline" class="timeline-section bg-dark">
+            <div class="timeline-line"></div>
+            <div class="container">
+                <div class="section-header text-center margin-bottom-xl">
+                    <span class="badge">Our Journey</span>
+                    <h2 class="section-title text-white">A Decade of <span class="text-gradient">Relentless Action</span></h2>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>The Genesis</h3>
+                        <p>Sam Heughan launches the first My Peak Challenge, uniting fitness with philanthropy to support Blood Cancer UK.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>£1,000,000 Milestone</h3>
+                        <p>Our global community surpasses £1 million in total donations, funding critical research breakthroughs.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>MPC partners with environmental and humanitarian agencies, expanding the 'Peak' mission to planet and community.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <h3>The Next Frontier</h3>
+                        <p>Launching Empower Impact—a professional, digital-first foundation for the future of strategic giving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Governance -->
+        <section id="transparency" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center margin-bottom-xl">
+                    <span class="badge">Trust & Accountability</span>
+                    <h2 class="section-title">Institutional <span class="text-accent">Transparency</span></h2>
+                    <p class="section-subtitle">We operate with the highest standards of governance. Explore our annual reports and legal disclosures.</p>
+                </div>
+
+                <div class="trust-grid">
+                    <div class="glass-card report-card reveal">
+                        <div class="report-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 32px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                        <h3>2025 Annual Impact Report</h3>
+                        <p>A comprehensive breakdown of every pound raised and its direct real-world outcome.</p>
+                        <a href="#" class="download-btn">View PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px;"><path d="M7 13l5 5 5-5M12 18V6"/></svg></a>
+                    </div>
+                    <div class="glass-card report-card reveal delay-1">
+                        <div class="report-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 32px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <h3>Governance Framework</h3>
+                        <p>Our ethical guidelines, board structure, and donor protection policies.</p>
+                        <a href="#" class="download-btn">View Docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px;"><path d="M7 13l5 5 5-5M12 18V6"/></svg></a>
+                    </div>
+                    <div class="glass-card report-card reveal delay-2">
+                        <div class="report-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 32px;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                        <h3>Financial Audit 2025</h3>
+                        <p>Independently verified financial statements ensuring 100% accountability.</p>
+                        <a href="#" class="download-btn">View Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px;"><path d="M7 13l5 5 5-5M12 18V6"/></svg></a>
                     </div>
                 </div>
             </div>

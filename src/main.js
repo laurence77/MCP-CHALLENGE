@@ -427,9 +427,48 @@ if (pulsePoints.length > 0) {
     });
 }
 
-// Close card when clicking anywhere else
-document.addEventListener('click', () => {
-    if (mapImpactCard) mapImpactCard.classList.remove('active');
+// === PEAKER WALL MODAL LOGIC ===
+const honorModal = document.getElementById('honor-modal');
+const modalName = document.getElementById('modal-name');
+const modalLocation = document.getElementById('modal-location');
+const modalGoal = document.getElementById('modal-goal');
+const modalRaised = document.getElementById('modal-raised');
+const modalAvatar = document.getElementById('modal-avatar');
+const honorCards = document.querySelectorAll('.honor-card');
+const modalClose = document.querySelector('.modal-close');
+
+if (honorCards.length > 0) {
+    honorCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const name = card.getAttribute('data-peaker');
+            const goal = card.getAttribute('data-goal');
+            const raised = card.getAttribute('data-raised');
+            const location = card.querySelector('.honor-info span').innerText;
+            const imgSrc = card.querySelector('img').src;
+
+            if (name && honorModal) {
+                modalName.innerText = name;
+                modalGoal.innerText = goal;
+                modalRaised.innerText = raised;
+                modalLocation.innerText = location;
+                modalAvatar.style.backgroundImage = `url(${imgSrc})`;
+                honorModal.classList.add('active');
+            }
+        });
+    });
+}
+
+if (modalClose) {
+    modalClose.addEventListener('click', () => {
+        honorModal.classList.remove('active');
+    });
+}
+
+// Close on outside click
+window.addEventListener('click', (e) => {
+    if (e.target === honorModal) {
+        honorModal.classList.remove('active');
+    }
 });
 
 console.log('Empower Impact v2.0 — Fully Upgraded');

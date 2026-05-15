@@ -892,3 +892,198 @@ body.menu-open {
     .mobile-only { display: flex !important; }
 }
 @media(min-width:769px){ .mobile-only { display: none !important; } }
+/* --- PEAKER WALL OF HONOR --- */
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem;
+}
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 2rem;
+}
+.marquee-ltr .marquee-content { animation: scrollLtr 40s linear infinite; }
+.marquee-rtl .marquee-content { animation: scrollRtl 40s linear infinite; }
+
+@keyframes scrollLtr { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@keyframes scrollRtl { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+.marquee:hover .marquee-content { animation-play-state: paused; }
+
+.honor-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    min-width: 300px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.honor-card:hover {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.honor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+}
+.honor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.honor-info h4 { font-size: 1rem; margin: 0; color: var(--text); }
+.honor-info span { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Honor Modal */
+.honor-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: none;
+    align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.honor-modal.active { display: flex; opacity: 1; }
+.modal-inner {
+    background: var(--bg-surface);
+    width: 90%;
+    max-width: 500px;
+    padding: 3rem;
+    border-radius: var(--radius-l);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid var(--card-border);
+}
+.honor-modal.active .modal-inner { transform: scale(1); }
+.modal-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: none; border: none;
+    font-size: 2rem; color: var(--text-muted);
+    cursor: pointer;
+}
+.modal-header { text-align: center; margin-bottom: 2rem; }
+.modal-avatar {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--primary);
+    background-size: cover;
+    background-position: center;
+}
+.modal-stat {
+    background: rgba(255,255,255,0.03);
+    padding: 1.5rem;
+    border-radius: var(--radius-m);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.modal-stat label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 2px; }
+.modal-stat p { font-size: 1.5rem; font-weight: 800; margin-top: 0.5rem; font-family: 'Playfair Display', serif; }
+
+/* --- IMPACT TIMELINE --- */
+.timeline-section { position: relative; padding: 10rem 0; }
+.timeline-line {
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, transparent, var(--primary), var(--accent), transparent);
+    transform: translateX(-50%);
+}
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 8rem;
+    align-items: center;
+}
+.timeline-item:nth-child(even) { direction: rtl; }
+.timeline-item:nth-child(even) .timeline-content { direction: ltr; text-align: left; }
+.timeline-year {
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    opacity: 0.2;
+    transition: all 0.8s ease;
+}
+.timeline-item.reveal .timeline-year { opacity: 1; transform: scale(1.1); }
+.timeline-content {
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: var(--radius-l);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .timeline-line { left: 2rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 2rem; padding-left: 4rem; }
+    .timeline-item:nth-child(even) { direction: ltr; }
+    .timeline-year { font-size: 2.5rem; }
+}
+
+/* --- TRUST & GOVERNANCE --- */
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.report-card {
+    padding: 2rem;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.report-card:hover { transform: translateY(-10px); }
+.report-icon { color: var(--primary); margin-bottom: 1rem; }
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* --- LANGUAGE HUB --- */
+.lang-selector { position: relative; }
+.lang-btn {
+    background: none; border: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    color: var(--text-muted); font-weight: 700; font-size: 0.75rem;
+    cursor: pointer; transition: color 0.3s;
+}
+.lang-btn:hover { color: var(--primary); }
+.lang-dropdown {
+    position: absolute; top: 150%; right: 0;
+    width: 180px; padding: 0.5rem;
+    border-radius: var(--radius-m);
+    display: none; flex-direction: column;
+    z-index: 1001; border: 1px solid var(--card-border);
+    animation: slideDown 0.3s ease;
+}
+.lang-selector:hover .lang-dropdown { display: flex; }
+.lang-option {
+    padding: 0.8rem 1rem;
+    color: var(--text); text-decoration: none;
+    font-size: 0.8rem; border-radius: var(--radius-s);
+    transition: background 0.3s;
+}
+.lang-option:hover { background: rgba(255,255,255,0.05); color: var(--primary); }
+.lang-option.active { color: var(--primary); font-weight: 800; }
+
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
