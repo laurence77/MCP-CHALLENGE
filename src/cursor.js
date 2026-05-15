@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let angle = 0;
 
     // Smooth movement constants
-    const lerp = 0.15;
+    const lerp = 0.25; // Increased for snappier response
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Refresh interaction state on scroll
+    window.addEventListener('scroll', () => {
+        // Trigger a fake mousemove to refresh position if needed
+        // but mostly we want to ensure interactions are re-evaluated
+        updateInteractions();
+    }, { passive: true });
+
     function animate() {
         // Calculate movement physics
         const dx = mouseX - cursorX;
@@ -45,11 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate velocity & stretch
         const moveX = mouseX - lastMouseX;
         const moveY = mouseY - lastMouseY;
-        speed = Math.min(Math.sqrt(moveX * moveX + moveY * moveY) * 0.15, 0.8);
+        
+        // Damping the speed calculation for smoother stretching
+        const targetSpeed = Math.min(Math.sqrt(moveX * moveX + moveY * moveY) * 0.1, 0.6);
+        speed += (targetSpeed - speed) * 0.2;
         
         // Directional angle for stretching
-        if (speed > 0.05) {
-            angle = Math.atan2(moveY, moveX) * 180 / Math.PI;
+        if (speed > 0.02) {
+            const targetAngle = Math.atan2(moveY, moveX) * 180 / Math.PI;
+            angle += (targetAngle - angle) * 0.2;
         }
 
         lastMouseX = mouseX;
