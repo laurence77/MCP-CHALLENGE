@@ -449,6 +449,86 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1
     .milestone-text { font-size: 0.9rem; }
 }
 
+/* --- LIVE DONATION SIMULATOR --- */
+.live-donation-notify {
+    position: absolute;
+    bottom: 120%;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-m);
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+}
+.live-donation-notify.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.milestone-bar.pulse {
+    animation: barPulse 0.5s ease-out;
+}
+@keyframes barPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+    100% { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
+}
+.donation-amount { color: var(--primary-light); font-weight: 900; }
+
+/* --- SOCIAL PROOF FEED --- */
+.social-proof-container {
+    position: fixed;
+    bottom: 100px;
+    left: 2rem;
+    z-index: 900;
+    pointer-events: none;
+}
+.social-proof-card {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-m);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    max-width: 280px;
+}
+.social-proof-card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.proof-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+.proof-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.proof-user { font-weight: 700; font-size: 0.85rem; color: white; }
+.proof-action { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.proof-time { font-size: 0.65rem; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; }
+
 /* === MOBILE MENU OVERLAY === */
 .mobile-menu {
     position: fixed;

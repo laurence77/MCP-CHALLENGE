@@ -194,4 +194,97 @@ window.addEventListener('load', () => {
     }
 });
 
+// === FUNDRAISING SIMULATOR ===
+const donationProgress = document.querySelector('.milestone-progress-fill');
+const donationPctText = document.querySelector('.milestone-pct');
+const donationTotalText = document.querySelector('.milestone-text');
+const liveNotify = document.getElementById('live-donation');
+
+let currentRaised = 150000;
+const goal = 1000000;
+const names = ["James", "Sarah", "Elena", "Liam", "Peaker 77", "Marcus", "Sophie", "Sam", "MPC Team", "The Heughans"];
+
+function simulateDonation() {
+    const amount = Math.floor(Math.random() * 500) + 10; // $10 to $510
+    const name = names[Math.floor(Math.random() * names.length)];
+    
+    currentRaised += amount;
+    const pct = (currentRaised / goal) * 100;
+    
+    // Update UI
+    if (donationProgress) donationProgress.style.width = `${pct}%`;
+    if (donationPctText) donationPctText.innerText = `${pct.toFixed(1)}% Raised`;
+    if (donationTotalText) {
+        donationTotalText.innerHTML = `£${currentRaised.toLocaleString()} <span class="text-accent">Goal</span>`;
+    }
+    
+    // Show Notification
+    if (liveNotify) {
+        liveNotify.querySelector('.donation-user').innerText = name;
+        liveNotify.querySelector('.donation-amount').innerText = `£${amount}`;
+        liveNotify.classList.add('active');
+        
+        const bar = document.getElementById('milestone-bar');
+        if (bar) bar.classList.add('pulse');
+        
+        setTimeout(() => {
+            liveNotify.classList.remove('active');
+            if (bar) bar.classList.remove('pulse');
+        }, 3000);
+    }
+    
+    // Schedule next donation (random between 5-15 seconds)
+    setTimeout(simulateDonation, Math.random() * 10000 + 5000);
+}
+
+// Start simulator after preloader clears
+window.addEventListener('load', () => {
+    setTimeout(simulateDonation, 5000);
+});
+
+// === SOCIAL PROOF FEED ===
+const socialProofContainer = document.getElementById('social-proof');
+const locations = ["London, UK", "New York, US", "Sydney, AU", "Berlin, DE", "Paris, FR", "Tokyo, JP", "Toronto, CA", "Glasgow, SC"];
+const actions = ["just donated £25", "just joined the challenge", "became a monthly supporter", "completed their first peak", "just shared the impact"];
+
+function triggerSocialProof() {
+    if (!socialProofContainer) return;
+    
+    const name = names[Math.floor(Math.random() * names.length)];
+    const location = locations[Math.floor(Math.random() * locations.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    
+    const card = document.createElement('div');
+    card.className = 'social-proof-card';
+    card.innerHTML = `
+        <div class="proof-avatar">${name.charAt(0)}</div>
+        <div class="proof-content">
+            <span class="proof-user">${name} from ${location}</span>
+            <span class="proof-action">${action}</span>
+            <span class="proof-time">Just Now</span>
+        </div>
+    `;
+    
+    socialProofContainer.appendChild(card);
+    
+    // Trigger animation
+    setTimeout(() => card.classList.add('active'), 100);
+    
+    // Remove after 6 seconds
+    setTimeout(() => {
+        card.classList.remove('active');
+        setTimeout(() => card.remove(), 600);
+    }, 6000);
+}
+
+// Start Social Proof Feed
+window.addEventListener('load', () => {
+    // First one after 10 seconds
+    setTimeout(triggerSocialProof, 10000);
+    // Then every 20-40 seconds
+    setInterval(() => {
+        if (Math.random() > 0.5) triggerSocialProof();
+    }, 25000);
+});
+
 console.log('Empower Impact v2.0 — Fully Upgraded');
