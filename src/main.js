@@ -155,4 +155,15 @@ if (milestoneBar) {
     }, { passive: true });
 }
 
+// === CARD SPOTLIGHT EFFECT ===
+document.querySelectorAll('.glass-card, .nl-card, .stat-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
+
 console.log('Empower Impact v2.0 — Fully Upgraded');

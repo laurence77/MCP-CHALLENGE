@@ -1,3 +1,9 @@
+/* --- PREMIUM SCROLLBAR --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; border: 2px solid var(--bg-surface); }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
+
 /* === DESIGN SYSTEM === */
 :root {
     --primary: #2563EB;
@@ -156,7 +162,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1
 /* === INITIATIVES === */
 .initiatives-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
 .initiative-card{padding:2.5rem}
-.glass-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-l);box-shadow:var(--shadow-s);transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
+.glass-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-l);box-shadow:var(--shadow-s);transition:all .4s cubic-bezier(.175,.885,.32,1.275);position:relative;overflow:hidden}
+.glass-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(37,99,235,0.12) 0%, transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:0}
+.glass-card:hover::before{opacity:1}
+.glass-card > *{position:relative;z-index:1}
 .glass-card:hover{transform:translateY(-8px);border-color:var(--primary-light);box-shadow:0 20px 40px -10px rgba(37,99,235,.12)}
 .card-icon-wrap{width:56px;height:56px;border-radius:var(--radius-m);background:linear-gradient(135deg,rgba(37,99,235,.08),rgba(0,168,150,.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .card-icon-wrap svg{width:28px;height:28px;color:var(--text)}
