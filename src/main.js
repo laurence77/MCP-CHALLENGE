@@ -382,4 +382,38 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// === IMPACT MAP LOGIC ===
+const impactCard = document.getElementById('impact-card');
+const impactCity = document.getElementById('impact-city');
+const impactDesc = document.getElementById('impact-desc');
+const impactMetric = document.getElementById('impact-metric');
+const pulsePoints = document.querySelectorAll('.pulse-point');
+
+const impactData = {
+    "London": { desc: "Supporting Blood Cancer UK research and patient care programs.", metric: "£250,000 Donated" },
+    "Nairobi": { desc: "Clean water initiatives supporting over 5,000 families in rural areas.", metric: "5,000+ Families" },
+    "Toronto": { desc: "New recovery centers for children undergoing cancer treatment.", metric: "12 New Centers" },
+    "Sydney": { desc: "Environmental restoration projects protecting native wildlife.", metric: "50,000 Trees Planted" }
+};
+
+pulsePoints.forEach(point => {
+    point.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const city = point.getAttribute('data-city');
+        const data = impactData[city];
+        
+        if (data) {
+            impactCity.innerText = city;
+            impactDesc.innerText = data.desc;
+            impactMetric.innerText = data.metric;
+            impactCard.classList.add('active');
+        }
+    });
+});
+
+// Close card when clicking anywhere else
+document.addEventListener('click', () => {
+    if (impactCard) impactCard.classList.remove('active');
+});
+
 console.log('Empower Impact v2.0 — Fully Upgraded');

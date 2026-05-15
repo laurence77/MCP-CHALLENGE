@@ -247,6 +247,51 @@
             </div>
         </section>
 
+        <!-- Global Impact Verification Section -->
+        <section id="impact-map-section" class="section-padding bg-surface">
+            <div class="container text-center">
+                <span class="badge fade-in">Verification Hub</span>
+                <h2 class="section-title fade-in-up">Global Impact <span class="text-gradient">Transparency.</span></h2>
+                <p class="section-subtitle fade-in-up delay-1">Explore our global footprint. Click the pulsating hotspots to see real-world outcomes of your support.</p>
+                
+                <div class="map-wrapper fade-in-up delay-2">
+                    <div class="map-container" id="map-container">
+                        <svg class="world-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                            <!-- Minimal Landmasses -->
+                            <path class="land" d="M150,150 Q200,100 300,150 T450,100 T600,150 T800,200 L850,300 L700,400 L500,350 L300,400 L150,300 Z" fill="rgba(255,255,255,0.05)" />
+                            
+                            <!-- Pulse Points -->
+                            <g class="pulse-point" data-city="London" style="transform: translate(480px, 160px);">
+                                <circle class="pulse-circle" r="8" />
+                                <circle class="pulse-core" r="4" />
+                            </g>
+                            <g class="pulse-point" data-city="Nairobi" style="transform: translate(540px, 280px);">
+                                <circle class="pulse-circle" r="8" />
+                                <circle class="pulse-core" r="4" />
+                            </g>
+                            <g class="pulse-point" data-city="Toronto" style="transform: translate(250px, 180px);">
+                                <circle class="pulse-circle" r="8" />
+                                <circle class="pulse-core" r="4" />
+                            </g>
+                            <g class="pulse-point" data-city="Sydney" style="transform: translate(850px, 420px);">
+                                <circle class="pulse-circle" r="8" />
+                                <circle class="pulse-core" r="4" />
+                            </g>
+                        </svg>
+
+                        <!-- Impact Card (Dynamic) -->
+                        <div id="impact-card" class="impact-card glass">
+                            <div class="impact-card-inner">
+                                <h4 id="impact-city">Global Impact</h4>
+                                <p id="impact-desc">Select a location to verify results.</p>
+                                <span id="impact-metric" class="impact-metric">£0 Donated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Supporter Wall -->
         <section id="supporters" class="supporters-section section-padding bg-surface">
             <div class="container">
