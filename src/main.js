@@ -310,17 +310,21 @@ const searchContent = [
 ];
 
 function openSearch() {
+    if (!searchOverlay || !searchInput) return;
     searchOverlay.classList.add('active');
     setTimeout(() => searchInput.focus(), 100);
 }
 
 function closeSearch() {
+    if (!searchOverlay || !searchInput) return;
     searchOverlay.classList.remove('active');
     searchInput.value = '';
     renderResults([]);
 }
 
 function renderResults(results) {
+    if (!searchResults || !searchInput) return;
+
     if (results.length === 0 && searchInput.value !== '') {
         searchResults.innerHTML = `<div class="search-suggestions"><h3>No results found</h3></div>`;
         return;
@@ -356,6 +360,8 @@ if (searchClose) searchClose.addEventListener('click', closeSearch);
 
 // Keyboard listeners
 window.addEventListener('keydown', (e) => {
+    if (!searchOverlay) return;
+    
     if (e.key === '/' && !searchOverlay.classList.contains('active')) {
         e.preventDefault();
         openSearch();
@@ -383,8 +389,10 @@ if (searchInput) {
 // Suggested tags delegation
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('tag')) {
-        searchInput.value = e.target.innerText;
-        searchInput.dispatchEvent(new Event('input'));
+        if (searchInput) {
+            searchInput.value = e.target.innerText;
+            searchInput.dispatchEvent(new Event('input'));
+        }
     }
 });
 
@@ -402,20 +410,22 @@ const impactData = {
     "Sydney": { desc: "Environmental restoration projects protecting native wildlife.", metric: "50,000 Trees Planted" }
 };
 
-pulsePoints.forEach(point => {
-    point.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const city = point.getAttribute('data-city');
-        const data = impactData[city];
-        
-        if (data) {
-            impactCity.innerText = city;
-            impactDesc.innerText = data.desc;
-            impactMetric.innerText = data.metric;
-            impactCard.classList.add('active');
-        }
+if (pulsePoints.length > 0) {
+    pulsePoints.forEach(point => {
+        point.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const city = point.getAttribute('data-city');
+            const data = impactData[city];
+            
+            if (data && impactCard && impactCity && impactDesc && impactMetric) {
+                impactCity.innerText = city;
+                impactDesc.innerText = data.desc;
+                impactMetric.innerText = data.metric;
+                impactCard.classList.add('active');
+            }
+        });
     });
-});
+}
 
 // Close card when clicking anywhere else
 document.addEventListener('click', () => {
